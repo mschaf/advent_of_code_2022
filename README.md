@@ -1,24 +1,14 @@
-## Solutions for the Advent of Code 2022 in Ruby
+# Advent of Code 2022
 
 https://adventofcode.com/2022/
 
 My solutions for the Advent of Code 2022 written in Ruby
 
-### Running
-Run all, a specific day or part
-
+### Run a day´s solution
 `bin/run [<day> [<part>]]`
 
-### Generate scaffold for new day
+### Generate scaffold and download input for a new day
+`bin/setup [<day>]` 
 
-`bin/generate <day>` 
-
-### Tests
-
-Tests require `rspec`
-
-`gem install rspec`
-
-Run tests with 
-
-`rspec`
+### Run Tests
+`bundle exec rspec`
