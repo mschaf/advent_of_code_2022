@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require_relative '../lib/environment'
+
+day = ARGV[0]&.to_i
+day ||= Time.new.day
+part = ARGV[1]&.to_i
+
+Runner.new(day: day, part: part).run(with_print: true)

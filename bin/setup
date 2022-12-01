@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require_relative '../lib/environment'
+
+day = ARGV[0]&.to_i
+day ||= Time.new.day
+
+Generator.new(day: day).run
+InputDownloader.new(day: day).download_input
