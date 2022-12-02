@@ -3,8 +3,6 @@ require 'fileutils'
 
 class InputDownloader
 
-  INPUT_URL = 'https://adventofcode.com/2022/day/1/input'
-
   def initialize(day:)
     @day = day
   end
@@ -17,7 +15,7 @@ class InputDownloader
     puts "Downloading input for day #{@day} ..."
 
     File.open(file_name, "wb") do |file|
-      response = HTTParty.get(INPUT_URL, stream_body: true, headers: { 'Cookie': "session=#{session_token}"}) do |fragment|
+      response = HTTParty.get(input_url, stream_body: true, headers: { 'Cookie': "session=#{session_token}"}) do |fragment|
 
         file.write(fragment)
       end
@@ -35,6 +33,10 @@ class InputDownloader
 
   def session_token
     File.readlines('.session_token').first
+  end
+
+  def input_url
+    "https://adventofcode.com/2022/day/#{@day}/input"
   end
 
 end
