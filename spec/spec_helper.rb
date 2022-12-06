@@ -2,6 +2,7 @@ lib = File.expand_path("../lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require "environment"
+require "spec_helpers"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -13,4 +14,6 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include SpecHelpers
 end
