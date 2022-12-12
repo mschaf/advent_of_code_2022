@@ -34,14 +34,28 @@ class Generator
     else
       File.write spec_file, <<~RUBY
         RSpec.describe 'Day #{@day}' do
+
+          let(:example_input) { <<~INPUT }
+          
+          INPUT
   
           describe 'Part 1' do
+            it 'complies with the example from the instructions' do
+              mock_input(example_input)
+              expect(Runner.new(day: #{@day}, part: 1).run).to eq 0
+            end
+
             it 'has a solution' do
               expect(Runner.new(day: #{@day}, part: 1).run).to eq 0
             end
           end
   
           describe 'Part 2' do
+            it 'complies with the example from the instructions' do
+              mock_input(example_input)
+              expect(Runner.new(day: #{@day}, part: 2).run).to eq 0
+            end
+
             it 'has a solution' do
               expect(Runner.new(day: #{@day}, part: 2).run).to eq 0
             end
